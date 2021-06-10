@@ -12,14 +12,16 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc
 class JenkinsherokuApplicationTests {
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
-	@Test
-	void shouldReturnDefaultMessage() throws Exception {
-
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string("Hello Jenkins"));
-	}
+    @Test
+    void shouldReturnDefaultMessage() throws Exception{
+        this.mockMvc.perform(get("/"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello Jenkins"));
+    }
 
 
 
